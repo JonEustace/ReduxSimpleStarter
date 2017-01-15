@@ -6,6 +6,8 @@ import SearchBar from './components/search_bar';
 
 
 // Create a new component. This component should produce some HTML.
+// Functional components are used when we are taking in some information and spitting out some
+// JSX. A functional component can contain a class based component.
 const App = () => {
     return (
         <div>

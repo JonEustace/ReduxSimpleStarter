@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+
+// We require a component to be a class based component when we need to
+// have an idea of state.
+
 class SearchBar extends Component {
 
     constructor(props){
@@ -14,9 +18,12 @@ class SearchBar extends Component {
 
     // We render the input of the search bar and set it to state.
     render(){
+        //when adding a value to be set by state we are creating a controlled component
        return (
            <div>
-               <input onChange={event => this.setState({ term: event.target.value })} />
+               <input
+                   value={this.state.term}
+                   onChange={event => this.setState({ term: event.target.value })} />
                Value of the input: {this.state.term}
            </div>
     )
