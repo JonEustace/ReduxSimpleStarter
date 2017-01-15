@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import API_KEY from '../keys';
 import YTSearch from 'youtube-api-search';
+import VideoList from './components/video_list';
 
 // We used downwards data flow - The most parent component should be in charge of fetching external data.
 import SearchBar from './components/search_bar';
-
-
 
 
 // Create a new component. This component should produce some HTML.
@@ -24,18 +23,19 @@ class App extends Component {
 
     }
 
-    render()
-    {
+    render(){
+        // We pass props to VideoList
         return (
             <div>
                 <SearchBar />
+                <VideoList videos={this.state.videos} />
             </div>
-        )
+        );
     }
 }
 
 
 
 // Take this component's generated HTML and put it on the page (in the DOM)
-App.render(<App />, document.querySelector('.container'));
+ReactDOM.render(<App />, document.querySelector('.container'));
 
